@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechLead's Ego vs. Your Queen Energy</title>
+  <!-- Load Chart.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <h1>TechLead's Ego vs. Your Queen Energy</h1>
+  <canvas id="myChart" width="400" height="400"></canvas>
+  <script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: ['Attention-Seeking', 'Emotional Control', 'Charismatic Pull', 'Resilience', 'Influence'],
+        datasets: [
+          {
+            label: "TechLead's Ego",
+            data: [95, 60, 85, 80, 90],
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: '#FF6384',
+            pointBackgroundColor: '#FF6384'
+          },
+          {
+            label: 'Your Queen Energy',
+            data: [80, 90, 95, 85, 90],
+            backgroundColor: 'rgba(147, 112, 219, 0.2)',
+            borderColor: '#9370DB',
+            pointBackgroundColor: '#9370DB'
+          }
+        ]
+      },
+      options: {
+        scale: {
+          ticks: { beginAtZero: true, max: 100 }
+        },
+        elements: {
+          line: { tension: 0.4 }
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: "TechLead's Ego vs. Your Queen Energy"
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
